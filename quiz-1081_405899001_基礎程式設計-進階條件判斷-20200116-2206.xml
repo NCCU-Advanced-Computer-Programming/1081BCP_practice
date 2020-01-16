@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+        <text>$course$/1081_405899001_基礎程式設計的預設/進階條件判斷</text>
+
+    </category>
+  </question>
+
+<!-- question: 32059  -->
+  <question type="coderunner">
+    <name>
+      <text>CAPSTONE專案：文字冒險旅程</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">撰寫並修正教科書第15章的CAPSTONE專案程式，完成文字冒險旅程遊戲：</div>
+<div class="O1">一開始顯示下列文字說明</div>
+<div class="O1">"""You are on a deserted island in a 2D world.<br />Try to survive until rescue arrives!<br />Available commands are in CAPITAL letters.<br />Any other command exits the program
+<p>First LOOK around..."""</p>
+</div>
+<div class="O1">1.提示文字 ":: "，接受使用者指令。</div>
+<div class="O1">使用者若輸入 "LOOK" ，顯示下列文字後進行第2步</div>
+<div class="O1">"""You are stuck in a sand ditch.
+<p>Crawl out LEFT or RIGHT."""</p>
+</div>
+<div class="O1">否則顯示下列文字並離開程式</div>
+<div class="O1">"""You can only do actions shown in capital letters.
+<p>Try again!"""</p>
+</div>
+<div class="O1">
+<div class="O1"></div>
+<div class="O1">2.提示文字 ":: "，接受使用者指令。</div>
+<div class="O1">使用者若輸入 "LEFT" ，顯示下列文字後進行第3步</div>
+<p>"""You see a STARFISH and a CRAB on the sand.<br />And you're hungry! Which do you eat?"""</p>
+</div>
+<div class="O1">若輸入 "RIGHT" ，顯示下列文字後離開程式</div>
+<div class="O1">"""No can do. That side is very slippery.<br />You fall very far into some weird cavern.
+<p>You do not survive :("""</p>
+</div>
+<div class="O1">
+<div class="O1">否則顯示下列文字並離開程式</div>
+<div class="O1">"""You can only do actions shown in capital letters.
+<p>Try again!"""</p>
+</div>
+<div class="O1">
+<div class="O1">
+<div class="O1"></div>
+<div class="O1">3.提示文字 ":: "，接受使用者指令。</div>
+<div class="O1">使用者若輸入 "STARFISH" ，顯示下列文字後離開程式</div>
+<div class="O1">"""Oh no! You immediately don't feel well.
+<p>You do not survive :("""</p>
+</div>
+<div class="O1">
+<div class="O1">若輸入 "CRAB" ，顯示下列文字後進行第4步</div>
+<div class="O1">"Raw crab should be fine, right? YES or NO."</div>
+<div class="O1">
+<div class="O1">否則顯示下列文字並離開程式</div>
+<div class="O1">"""You can only do actions shown in capital letters.
+<p>Try again!"""</p>
+</div>
+<div class="O1"></div>
+<div class="O1">4.提示文字 ":: "，接受使用者指令。
+<div class="O1">使用者若輸入 "YES" ，顯示下列文字後進行第5步</div>
+<div class="O1">"""Ok, You eat it raw. Fingers crossed.
+<p>Food in your belly helps you see a TREE."""</p>
+</div>
+<div class="O1">
+<div class="O1">若輸入 "NO" ，顯示下列文字後離開程式</div>
+<div class="O1">"""Well, there's nothing else left to eat.
+<p>You do not survive :("""</p>
+</div>
+<div class="O1">
+<div class="O1">否則顯示下列文字並離開程式</div>
+<div class="O1">"""You can only do actions shown in capital letters.
+<p>Try again!"""</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="O1"></div>
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">5.提示文字 ":: "，接受使用者指令。
+<div class="O1">使用者若輸入 "TREE" ，顯示下列文字後進行第6步</div>
+<div class="O1">"""It's a coconut tree! And you're thirsty!
+<p>Do you drink the coconut water? YES or NO."""</p>
+</div>
+<div class="O1">
+<div class="O1">否則顯示下列文字並離開程式</div>
+<div class="O1">
+<div class="O1">"""You can only do actions shown in capital letters.
+<p>Try again!"""</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="O1"></div>
+<div class="O1">6.提示文字 ":: "，接受使用者指令。
+<div class="O1">使用者若輸入 "YES" ，顯示下列文字後離開程式</div>
+<div class="O1">"""Oh boy. Coconut water and rawcrab don't mix.
+<p>You do not survive :("""</p>
+</div>
+<div class="O1">
+<div class="O1">若輸入 "NO" ，顯示下列文字後離開程式</div>
+<div class="O1">"""Good choice.
+<p>Look! It's a rescue plane! You made it! \o/"""</p>
+</div>
+<div class="O1">
+<div class="O1">否則顯示下列文字並離開程式</div>
+<div class="O1">"""You can only do actions shown in capital letters.
+<p>Try again!"""</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="O1"></div>
+<div class="O1">如： 按順序輸入 "LOOK" 、"LEFT"、"CRAB"、"YES"、"TREE"、"NO" ，可得最後結果為</div>
+<div class="O1">"""Good choice.
+<p>Look! It's a rescue plane! You made it! \o/"""</p>
+</div>
+</div>
+<p></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>40.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template>__saved_input__ = input
+def input(prompt=''):
+    s = __saved_input__(prompt)
+    print(s)
+    return s
+    
+{{STUDENT_ANSWER}}
+
+
+{{TEST.testcode}}</template>
+    <iscombinatortemplate>0</iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer><![CDATA[banner="""You are on a deserted island in a 2D world.
+Try to survive until rescue arrives!
+Available commands are in CAPITAL letters.
+Any other command exits the program
+First LOOK around..."""
+
+prompt=":: "
+
+look_info1="""You are stuck in a sand ditch.
+Crawl out LEFT or RIGHT."""
+else_info="""You can only do actions shown in capital letters.
+Try again!"""
+
+left_info2="""You see a STARFISH and a CRAB on the sand.
+And you're hungry! Which do you eat?"""
+right_info2="""No can do. That side is very slippery.
+You fall very far into some weird cavern.
+You do not survive :("""
+
+starfish_info3="""Oh no! You immediately don't feel well.
+You do not survive :("""
+crab_info3="Raw crab should be fine, right? YES or NO."
+
+yes_info4="""Ok, You eat it raw. Fingers crossed.
+Food in your belly helps you see a TREE."""
+no_info4="""Well, there's nothing else left to eat.
+You do not survive :("""
+
+tree_info5="""It's a coconut tree! And you're thirsty!
+Do you drink the coconut water? YES or NO."""
+
+yes_info6="""Oh boy. Coconut water and rawcrab don't mix.
+You do not survive :("""
+no_info6="""Good choice.
+Look! It's a rescue plane! You made it! \o/"""
+
+print(banner)
+ans=input(prompt) #1.提示文字 ":: "，接受使用者指令。
+if ans=="LOOK": #使用者若輸入 "LOOK" ，顯示下列文字後進行第2步
+    print(look_info1)
+    ans=input(prompt) #2.提示文字 ":: "，接受使用者指令。
+    if ans=="LEFT" :  #使用者若輸入 "LEFT" ，顯示下列文字後進行第3步
+        print(left_info2)
+        ans=input(prompt) #3.提示文字 ":: "，接受使用者指令。
+        if ans=="STARFISH": #使用者若輸入 "STARFISH" ，顯示下列文字後離開程式
+            print(starfish_info3)
+        elif ans=="CRAB": #若輸入 "CRAB" ，顯示下列文字後進行第4步
+            print(crab_info3)
+            ans=input(prompt) #4.提示文字 ":: "，接受使用者指令。
+            if ans=="YES": #使用者若輸入 "YES" ，顯示下列文字後進行第5步
+                print(yes_info4)
+                ans=input(prompt) #5.提示文字 ":: "，接受使用者指令。
+                if ans=="TREE": #使用者若輸入 "TREE" ，顯示下列文字後進行第6步
+                    print(tree_info5)
+                    ans=input(prompt) #6.提示文字 ":: "，接受使用者指令。
+                    if ans == "YES": #使用者若輸入 "YES" ，顯示下列文字後離開程式
+                        print(yes_info6)
+                    elif ans=="NO": #若輸入 "NO" ，顯示下列文字後離開程式
+                        print(no_info6)
+                    else: #否則顯示下列文字並離開程式                    
+                        print(else_info)
+                else: #否則顯示下列文字並離開程式
+                    print(else_info)
+            elif ans=="NO":#若輸入 "NO" ，顯示下列文字後離開程式
+                print(no_info4)
+            else: #否則顯示下列文字並離開程式
+                print(else_info)
+        else:#否則顯示下列文字並離開程式
+            print(else_info)
+    elif ans=="RIGHT": #若輸入 "RIGHT" ，顯示下列文字後離開程式
+        print(right_info2)
+    else: #否則顯示下列文字並離開程式
+        print(else_info)
+else: #否則顯示下列文字並離開程式
+    print(else_info)]]></answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>0</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="0" useasexample="1" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>LOOK
+LEFT
+CRAB
+YES
+TREE
+NO</text>
+      </stdin>
+      <expected>
+                <text>You are on a deserted island in a 2D world.
+Try to survive until rescue arrives!
+Available commands are in CAPITAL letters.
+Any other command exits the program
+First LOOK around...
+:: LOOK
+You are stuck in a sand ditch.
+Crawl out LEFT or RIGHT.
+:: LEFT
+You see a STARFISH and a CRAB on the sand.
+And you're hungry! Which do you eat?
+:: CRAB
+Raw crab should be fine, right? YES or NO.
+:: YES
+Ok, You eat it raw. Fingers crossed.
+Food in your belly helps you see a TREE.
+:: TREE
+It's a coconut tree! And you're thirsty!
+Do you drink the coconut water? YES or NO.
+:: NO
+Good choice.
+Look! It's a rescue plane! You made it! \o/</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>LOOK
+LEFT
+FISH</text>
+      </stdin>
+      <expected>
+                <text>You are on a deserted island in a 2D world.
+Try to survive until rescue arrives!
+Available commands are in CAPITAL letters.
+Any other command exits the program
+First LOOK around...
+:: LOOK
+You are stuck in a sand ditch.
+Crawl out LEFT or RIGHT.
+:: LEFT
+You see a STARFISH and a CRAB on the sand.
+And you're hungry! Which do you eat?
+:: FISH
+You can only do actions shown in capital letters.
+Try again!</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>LOOK
+RIGHT</text>
+      </stdin>
+      <expected>
+                <text>You are on a deserted island in a 2D world.
+Try to survive until rescue arrives!
+Available commands are in CAPITAL letters.
+Any other command exits the program
+First LOOK around...
+:: LOOK
+You are stuck in a sand ditch.
+Crawl out LEFT or RIGHT.
+:: RIGHT
+No can do. That side is very slippery.
+You fall very far into some weird cavern.
+You do not survive :(</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>LOOK
+LEFT
+CRAB
+YES
+TREE
+YES</text>
+      </stdin>
+      <expected>
+                <text>You are on a deserted island in a 2D world.
+Try to survive until rescue arrives!
+Available commands are in CAPITAL letters.
+Any other command exits the program
+First LOOK around...
+:: LOOK
+You are stuck in a sand ditch.
+Crawl out LEFT or RIGHT.
+:: LEFT
+You see a STARFISH and a CRAB on the sand.
+And you're hungry! Which do you eat?
+:: CRAB
+Raw crab should be fine, right? YES or NO.
+:: YES
+Ok, You eat it raw. Fingers crossed.
+Food in your belly helps you see a TREE.
+:: TREE
+It's a coconut tree! And you're thirsty!
+Do you drink the coconut water? YES or NO.
+:: YES
+Oh boy. Coconut water and rawcrab don't mix.
+You do not survive :(</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>LOOK
+LEFT
+CRAB
+YES
+THREE</text>
+      </stdin>
+      <expected>
+                <text>You are on a deserted island in a 2D world.
+Try to survive until rescue arrives!
+Available commands are in CAPITAL letters.
+Any other command exits the program
+First LOOK around...
+:: LOOK
+You are stuck in a sand ditch.
+Crawl out LEFT or RIGHT.
+:: LEFT
+You see a STARFISH and a CRAB on the sand.
+And you're hungry! Which do you eat?
+:: CRAB
+Raw crab should be fine, right? YES or NO.
+:: YES
+Ok, You eat it raw. Fingers crossed.
+Food in your belly helps you see a TREE.
+:: THREE
+You can only do actions shown in capital letters.
+Try again!</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+<!-- question: 32058  -->
+  <question type="coderunner">
+    <name>
+      <text>字串內容判斷</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">請寫一段程式，出現提示字串 "Give me a string: " ，輸入一個小寫字母組成的字串，</div>
+<div class="O1">若該字串包含所有母音字母(a,e,i,o,u)，則顯示 "You have all the vowels!"；</div>
+<div class="O1">如果字串的開頭為 a ，且結尾為 z，則顯示 "And it's sort of alphabetical!"。</div>
+<div class="O1"></div>
+<div class="O1"></div>
+<div class="O1">如： 輸入 "education"，顯示結果為 "You have all the vowels!"</div>
+</div>
+<p></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>30.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template>__saved_input__ = input
+def input(prompt=''):
+    s = __saved_input__(prompt)
+    print(s)
+    return s
+    
+{{STUDENT_ANSWER}}
+
+
+{{TEST.testcode}}</template>
+    <iscombinatortemplate>0</iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer><![CDATA[a_string=input("Give me a string: ")
+
+if "a" in a_string and "e" in a_string and "i" in a_string and "o" in a_string and "u" in a_string:
+    print("You have all the vowels!")
+if a_string[0] == 'a' and a_string[-1] == 'z':
+    print("And it's sort of alphabetical!")]]></answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>0</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="0" useasexample="1" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>education</text>
+      </stdin>
+      <expected>
+                <text>Give me a string: education
+You have all the vowels!</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>abuzz</text>
+      </stdin>
+      <expected>
+                <text>Give me a string: abuzz
+And it's sort of alphabetical!</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>jazz</text>
+      </stdin>
+      <expected>
+                <text>Give me a string: jazz</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>authoritative</text>
+      </stdin>
+      <expected>
+                <text>Give me a string: authoritative
+You have all the vowels!</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>austerolitz</text>
+      </stdin>
+      <expected>
+                <text>Give me a string: austerolitz
+You have all the vowels!
+And it's sort of alphabetical!</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+<!-- question: 32057  -->
+  <question type="coderunner">
+    <name>
+      <text>輸入兩個整數判斷它們關係</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">請寫一段程式，分別出現提示字串 "First number is: " 及 "Second number is: "</div>
+<div class="O1">取得兩個整數值，接著顯示出這兩個數字間的關係：
+<div class="O2">
+<ul>
+<li>兩數相等，顯示"Numbers are equal."</li>
+<li>第一個數小於第二個數，顯示"First number is less than the second number."</li>
+<li>第一個數大於第二個數，顯示"First number is greater than the second number."</li>
+</ul>
+</div>
+</div>
+<div class="O1"></div>
+<div class="O1"></div>
+<div class="O1">如： 輸入 5 及 5，就顯示結果為 "Numbers are equal."</div>
+</div>
+<p></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>30.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template>__saved_input__ = input
+def input(prompt=''):
+    s = __saved_input__(prompt)
+    print(s)
+    return s
+    
+{{STUDENT_ANSWER}}
+
+
+{{TEST.testcode}}</template>
+    <iscombinatortemplate>0</iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer><![CDATA[first = int(input("First number is: "))
+second = int(input("Second number is: "))
+
+if first == second:
+    print("Numbers are equal.")
+elif first < second:
+    print("First number is less than the second number.")
+else:
+    print("First number is greater than the second number.")]]></answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>0</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="0" useasexample="1" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>5
+5</text>
+      </stdin>
+      <expected>
+                <text>First number is: 5
+Second number is: 5
+Numbers are equal.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>2
+3</text>
+      </stdin>
+      <expected>
+                <text>First number is: 2
+Second number is: 3
+First number is less than the second number.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>6
+5</text>
+      </stdin>
+      <expected>
+                <text>First number is: 6
+Second number is: 5
+First number is greater than the second number.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>0
+-1</text>
+      </stdin>
+      <expected>
+                <text>First number is: 0
+Second number is: -1
+First number is greater than the second number.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>12345678987654321
+12345678987654321</text>
+      </stdin>
+      <expected>
+                <text>First number is: 12345678987654321
+Second number is: 12345678987654321
+Numbers are equal.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+</quiz>

@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+        <text>$course$/1081_405899001_基礎程式設計的預設/Tuple＆輸入功能</text>
+
+    </category>
+  </question>
+
+<!-- question: 31705  -->
+  <question type="coderunner">
+    <name>
+      <text>交換內容</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">請寫一段程式，將兩個已初始化變數 a , b，互換其值。</div>
+<div class="O1">(注意：不須顯示其值，只需互換)</div>
+<div class="O1"></div>
+<div class="O1">例如，若a為 "strong"，b為"weak" 執行後 b 為 "strong"，a 為 "weak"</div>
+</div>
+</div>
+</div>
+</div>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>25.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template><![CDATA[import sys
+
+def __indent_line(line, extra_space):
+    """Add the given amount of extra space at the start (or remove, if negative)"""
+    if extra_space >= 0:
+        return extra_space * ' ' + line
+    elif len(line) - len(line.lstrip()) >= -extra_space:
+        return line[extra_space + 1 : ]
+    else:
+        raise Exception("Line '{}' has a negative indent!".format(line))
+        
+
+def __indent(code, num_spaces):
+    """Indent the given code by some fixed amount such that the first non-blank
+       line has 'num_spaces' spaces at the start.
+    """
+    lines = code.split('\n')
+    non_empty_lines = [line for line in lines if line != '']
+    if non_empty_lines:
+        first = non_empty_lines[0]
+        current_indent =  len(first) - len(first.lstrip())
+        reqd_indent = num_spaces - current_indent
+        indented_lines = [__indent_line(line, reqd_indent) for line in lines]
+        return '\n'.join(indented_lines) + '\n'
+    else:
+        return code  # Empty
+
+__skeleton__ = """
+def swap(a,b):
+{0}  # Student code inserted here
+    print((a,b))
+"""
+
+__student_answer__ = """{{ STUDENT_ANSWER | e('py') }}"""
+
+try:
+    __indented__answer__ = __indent(__student_answer__, 4) #indent one level (4 spaces)
+except Exception as e:
+    print(e, file=sys.stderr)
+else:
+    exec(__skeleton__.format(__indented__answer__) + '\n' + """{{ TEST.testcode | e('py') }}""")
+
+SEPARATOR = "#<ab@17943918#@>#"
+
+{% for TEST in TESTCASES %}
+{{ TEST.testcode }}
+{% if not loop.last %}
+print(SEPARATOR)
+{% endif %}
+{% endfor %}]]></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer>(a,b)=(b,a)</answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>1</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="2" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[swap(a="strong",b="weak")]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>('weak', 'strong')</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>swap(a=True,b=False)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>(False, True)</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>swap(a=0,b=1)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>(1, 0)</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[swap(a=None,b="None")]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>('None', None)</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>swap(a=0.5,b=2)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>(2, 0.5)</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+<!-- question: 31702  -->
+  <question type="coderunner">
+    <name>
+      <text>計算次方</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">請寫一段程式，出現提示字串 "What is base number? " 將輸入的整數數字指派給 b</div>
+<div class="O1"></div>
+<div class="O1">以及出現提示字串 "What is exponent? " 將輸入的整數數字指派給 e 之後</div>
+<div class="O1"></div>
+<div class="O1">計算  b<sup>e</sup> (b的e次方) 並將運算結果顯示。</div>
+<p></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>25.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template>__saved_input__ = input
+def input(prompt=''):
+    s = __saved_input__(prompt)
+    print(s)
+    return s
+    
+{{STUDENT_ANSWER}}
+
+
+{{TEST.testcode}}</template>
+    <iscombinatortemplate>0</iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer><![CDATA[b = int(input("What is base number? "))
+e = int(input("What is exponent? "))
+print(b**e)]]></answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>0</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="0" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>2
+3</text>
+      </stdin>
+      <expected>
+                <text>What is base number? 2
+What is exponent? 3
+8</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>1
+5</text>
+      </stdin>
+      <expected>
+                <text>What is base number? 1
+What is exponent? 5
+1</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>10
+10</text>
+      </stdin>
+      <expected>
+                <text>What is base number? 10
+What is exponent? 10
+10000000000</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>485213
+0</text>
+      </stdin>
+      <expected>
+                <text>What is base number? 485213
+What is exponent? 0
+1</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>2
+-1</text>
+      </stdin>
+      <expected>
+                <text>What is base number? 2
+What is exponent? -1
+0.5</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+<!-- question: 31703  -->
+  <question type="coderunner">
+    <name>
+      <text>貴姓大名今年貴庚</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">請寫一段程式，出現提示字串 "What is your name? " 取得姓名字串請自行指派一變數名稱儲存</div>
+<div class="O1"></div>
+<div class="O1">以及出現提示字串 "How old are you? " 取得年齡整數請自行指派一變數名稱儲存，</div>
+<div class="O1"></div>
+<div class="O1">計算25年後的年紀為何？並做如下例之資料顯示。</div>
+<div class="O1"></div>
+<div class="O1">如： 輸入姓名為 Bob，年齡為 10，顯示結果為 "Bob! In 25 years you will be 35!"</div>
+</div>
+<p></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>25.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template>__saved_input__ = input
+def input(prompt=''):
+    s = __saved_input__(prompt)
+    print(s)
+    return s
+    
+{{STUDENT_ANSWER}}
+
+
+{{TEST.testcode}}</template>
+    <iscombinatortemplate>0</iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer><![CDATA[name = input("What is your name? ")
+age = int(input("How old are you? "))
+print(name+"! In 25 years you will be "+str(age+25)+"!")]]></answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>0</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="0" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>Bob
+10</text>
+      </stdin>
+      <expected>
+                <text>What is your name? Bob
+How old are you? 10
+Bob! In 25 years you will be 35!</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>Donald
+73</text>
+      </stdin>
+      <expected>
+                <text>What is your name? Donald
+How old are you? 73
+Donald! In 25 years you will be 98!</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>Barack
+58</text>
+      </stdin>
+      <expected>
+                <text>What is your name? Barack
+How old are you? 58
+Barack! In 25 years you will be 83!</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>Amber
+18</text>
+      </stdin>
+      <expected>
+                <text>What is your name? Amber
+How old are you? 18
+Amber! In 25 years you will be 43!</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>Laura
+1</text>
+      </stdin>
+      <expected>
+                <text>What is your name? Laura
+How old are you? 1
+Laura! In 25 years you will be 26!</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+<!-- question: 31704  -->
+  <question type="coderunner">
+    <name>
+      <text>重複顯示子字串</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">已初始化 word, count 兩個變數名稱，</div>
+<div class="O1">請寫一段程式，利用tuple相關操作方法，</div>
+<div class="O1">將 word 的內容(已知長度必為4)依據 count 變數重複放入 tuple t (請自行初始化為 t = ())</div>
+<div class="O1">並每次刪減一個字元後，將刪減後的子字串依據 count 變數重複放入 t ，</div>
+<div class="O1">直到刪減的子字串剩一個字母為止，最後再顯示 t 的內容。</div>
+<div class="O1"></div>
+<div class="O1">例如，當word為"echo"，count為3時，</div>
+<div class="O1">顯示 ('echo', 'echo', 'echo', 'cho', 'cho', 'cho', 'ho', 'ho', 'ho', 'o', 'o', 'o')</div>
+</div>
+</div>
+</div>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>25.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template><![CDATA[import sys
+
+def __indent_line(line, extra_space):
+    """Add the given amount of extra space at the start (or remove, if negative)"""
+    if extra_space >= 0:
+        return extra_space * ' ' + line
+    elif len(line) - len(line.lstrip()) >= -extra_space:
+        return line[extra_space + 1 : ]
+    else:
+        raise Exception("Line '{}' has a negative indent!".format(line))
+        
+
+def __indent(code, num_spaces):
+    """Indent the given code by some fixed amount such that the first non-blank
+       line has 'num_spaces' spaces at the start.
+    """
+    lines = code.split('\n')
+    non_empty_lines = [line for line in lines if line != '']
+    if non_empty_lines:
+        first = non_empty_lines[0]
+        current_indent =  len(first) - len(first.lstrip())
+        reqd_indent = num_spaces - current_indent
+        indented_lines = [__indent_line(line, reqd_indent) for line in lines]
+        return '\n'.join(indented_lines) + '\n'
+    else:
+        return code  # Empty
+
+__skeleton__ = """
+def repeat_substring(word,count):
+{0}  # Student code inserted here
+"""
+
+__student_answer__ = """{{ STUDENT_ANSWER | e('py') }}"""
+
+try:
+    __indented__answer__ = __indent(__student_answer__, 4) #indent one level (4 spaces)
+except Exception as e:
+    print(e, file=sys.stderr)
+else:
+    exec(__skeleton__.format(__indented__answer__) + '\n' + """{{ TEST.testcode | e('py') }}""")
+
+SEPARATOR = "#<ab@17943918#@>#"
+
+{% for TEST in TESTCASES %}
+{{ TEST.testcode }}
+{% if not loop.last %}
+print(SEPARATOR)
+{% endif %}
+{% endfor %}]]></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer>t=()
+t+=(word,)*count
+t+=(word[1:],)*count
+t+=(word[2:],)*count
+t+=(word[3:],)*count
+print(t)</answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>1</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="2" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[repeat_substring(word="echo",count=3)]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>('echo', 'echo', 'echo', 'cho', 'cho', 'cho', 'ho', 'ho', 'ho', 'o', 'o', 'o')</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[repeat_substring(word="word",count=2)]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>('word', 'word', 'ord', 'ord', 'rd', 'rd', 'd', 'd')</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[repeat_substring(word="book",count=4)]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>('book', 'book', 'book', 'book', 'ook', 'ook', 'ook', 'ook', 'ok', 'ok', 'ok', 'ok', 'k', 'k', 'k', 'k')</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[repeat_substring(word="test",count=1)]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>('test', 'est', 'st', 't')</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[repeat_substring(word="good",count=5)]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>('good', 'good', 'good', 'good', 'good', 'ood', 'ood', 'ood', 'ood', 'ood', 'od', 'od', 'od', 'od', 'od', 'd', 'd', 'd', 'd', 'd')</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+</quiz>

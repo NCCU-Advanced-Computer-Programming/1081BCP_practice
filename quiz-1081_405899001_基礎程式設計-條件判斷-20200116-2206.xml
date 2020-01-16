@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+        <text>$course$/1081_405899001_基礎程式設計的預設/條件判斷</text>
+
+    </category>
+  </question>
+
+<!-- question: 31853  -->
+  <question type="coderunner">
+    <name>
+      <text>奇數還是偶數？</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">寫一段程式判斷一個已初始化整數 x 的奇偶，</div>
+<div class="O1">如果是偶數，就顯示 "x is an even number." ；</div>
+<div class="O1">如果是奇數，就顯示 "x is an odd number." 。</div>
+<div class="O1"></div>
+<div class="O1"></div>
+<div class="O1">(提示：將數值除以2求其餘數即可知奇偶)</div>
+</div>
+<div class="O1"></div>
+<div class="O1">如 x = 5 顯示 "x is an odd number." 。</div>
+</div>
+</div>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>25.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template><![CDATA[import sys
+
+def __indent_line(line, extra_space):
+    """Add the given amount of extra space at the start (or remove, if negative)"""
+    if extra_space >= 0:
+        return extra_space * ' ' + line
+    elif len(line) - len(line.lstrip()) >= -extra_space:
+        return line[extra_space + 1 : ]
+    else:
+        raise Exception("Line '{}' has a negative indent!".format(line))
+        
+
+def __indent(code, num_spaces):
+    """Indent the given code by some fixed amount such that the first non-blank
+       line has 'num_spaces' spaces at the start.
+    """
+    lines = code.split('\n')
+    non_empty_lines = [line for line in lines if line != '']
+    if non_empty_lines:
+        first = non_empty_lines[0]
+        current_indent =  len(first) - len(first.lstrip())
+        reqd_indent = num_spaces - current_indent
+        indented_lines = [__indent_line(line, reqd_indent) for line in lines]
+        return '\n'.join(indented_lines) + '\n'
+    else:
+        return code  # Empty
+
+__skeleton__ = """
+def oddoreven(x):
+{0}  # Student code inserted here
+"""
+
+__student_answer__ = """{{ STUDENT_ANSWER | e('py') }}"""
+
+try:
+    __indented__answer__ = __indent(__student_answer__, 4) #indent one level (4 spaces)
+except Exception as e:
+    print(e, file=sys.stderr)
+else:
+    exec(__skeleton__.format(__indented__answer__) + '\n' + """{{ TEST.testcode | e('py') }}""")
+
+SEPARATOR = "#<ab@17943918#@>#"
+
+{% for TEST in TESTCASES %}
+{{ TEST.testcode }}
+{% if not loop.last %}
+print(SEPARATOR)
+{% endif %}
+{% endfor %}]]></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer><![CDATA[mod = x % 2
+if mod == 0:
+    print("x is an even number.")
+if mod == 1:
+    print("x is an odd number.")]]></answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>1</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="2" useasexample="1" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text>oddoreven(x=5)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>x is an odd number.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>oddoreven(x=2048)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>x is an even number.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>oddoreven(x=0)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>x is an even number.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>oddoreven(x=-1)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>x is an odd number.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>oddoreven(x=-10)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>x is an even number.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+<!-- question: 31851  -->
+  <question type="coderunner">
+    <name>
+      <text>整數還是字串？</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">寫一段程式判斷一個已初始化變數 var 其資料型別是整數或字串，</div>
+<div class="O1">如果是整數，就顯示"I'm a numbers person." ；</div>
+<div class="O1">如果是字串，就顯示"I'm a words person." 。</div>
+<div class="O1"></div>
+<div class="O1">提示：可用type()函數進行判斷</div>
+</div>
+<div class="O1"></div>
+<div class="O1">如 var = 123 就顯示"I'm a numbers person."。</div>
+</div>
+</div>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>25.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template><![CDATA[import sys
+
+def __indent_line(line, extra_space):
+    """Add the given amount of extra space at the start (or remove, if negative)"""
+    if extra_space >= 0:
+        return extra_space * ' ' + line
+    elif len(line) - len(line.lstrip()) >= -extra_space:
+        return line[extra_space + 1 : ]
+    else:
+        raise Exception("Line '{}' has a negative indent!".format(line))
+        
+
+def __indent(code, num_spaces):
+    """Indent the given code by some fixed amount such that the first non-blank
+       line has 'num_spaces' spaces at the start.
+    """
+    lines = code.split('\n')
+    non_empty_lines = [line for line in lines if line != '']
+    if non_empty_lines:
+        first = non_empty_lines[0]
+        current_indent =  len(first) - len(first.lstrip())
+        reqd_indent = num_spaces - current_indent
+        indented_lines = [__indent_line(line, reqd_indent) for line in lines]
+        return '\n'.join(indented_lines) + '\n'
+    else:
+        return code  # Empty
+
+__skeleton__ = """
+def numberorword(var):
+{0}  # Student code inserted here
+"""
+
+__student_answer__ = """{{ STUDENT_ANSWER | e('py') }}"""
+
+try:
+    __indented__answer__ = __indent(__student_answer__, 4) #indent one level (4 spaces)
+except Exception as e:
+    print(e, file=sys.stderr)
+else:
+    exec(__skeleton__.format(__indented__answer__) + '\n' + """{{ TEST.testcode | e('py') }}""")
+
+SEPARATOR = "#<ab@17943918#@>#"
+
+{% for TEST in TESTCASES %}
+{{ TEST.testcode }}
+{% if not loop.last %}
+print(SEPARATOR)
+{% endif %}
+{% endfor %}]]></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer><![CDATA[if type(var) == int:
+    print("I'm a numbers person.")
+if type(var) == str:
+    print("I'm a words person.")]]></answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>1</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="2" useasexample="1" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text>numberorword(123)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>I'm a numbers person.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[numberorword("Hello World!")]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>I'm a words person.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>numberorword(1234567890987654321)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>I'm a numbers person.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[numberorword("123")]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>I'm a words person.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>numberorword(-1)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>I'm a numbers person.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+<!-- question: 31854  -->
+  <question type="coderunner">
+    <name>
+      <text>猜數字遊戲</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">寫一段程式執行猜數字遊戲，</div>
+<div class="O1">有一個已初始化變數 secret，</div>
+<div class="O1">程式需提示"Guess my number: "接受使用者輸入，</div>
+<div class="O1"></div>
+<div class="O1">如果使用者輸入的值小於 secret，就顯示"Too low."；</div>
+<div class="O1">如果大於 secret，就顯示"Too high."；</div>
+<div class="O1">如果相同，就顯示"You got it!"</div>
+</div>
+<div class="O1"></div>
+<div class="O1">如 secret = 47 ，使用者輸入 99，就顯示 "Too high."。</div>
+</div>
+</div>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>25.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template><![CDATA[import sys
+
+__saved_input__ = input
+def input(prompt=''):
+    s = __saved_input__(prompt)
+    print(s)
+    return s
+    
+def __indent_line(line, extra_space):
+    """Add the given amount of extra space at the start (or remove, if negative)"""
+    if extra_space >= 0:
+        return extra_space * ' ' + line
+    elif len(line) - len(line.lstrip()) >= -extra_space:
+        return line[extra_space + 1 : ]
+    else:
+        raise Exception("Line '{}' has a negative indent!".format(line))
+        
+
+def __indent(code, num_spaces):
+    """Indent the given code by some fixed amount such that the first non-blank
+       line has 'num_spaces' spaces at the start.
+    """
+    lines = code.split('\n')
+    non_empty_lines = [line for line in lines if line != '']
+    if non_empty_lines:
+        first = non_empty_lines[0]
+        current_indent =  len(first) - len(first.lstrip())
+        reqd_indent = num_spaces - current_indent
+        indented_lines = [__indent_line(line, reqd_indent) for line in lines]
+        return '\n'.join(indented_lines) + '\n'
+    else:
+        return code  # Empty
+
+__skeleton__ = """
+def guessnumber(secret):
+{0}  # Student code inserted here
+"""
+
+__student_answer__ = """{{ STUDENT_ANSWER | e('py') }}"""
+
+try:
+    __indented__answer__ = __indent(__student_answer__, 4) #indent one level (4 spaces)
+except Exception as e:
+    print(e, file=sys.stderr)
+else:
+    exec(__skeleton__.format(__indented__answer__) + '\n' + """{{ TEST.testcode | e('py') }}""")
+
+SEPARATOR = "#<ab@17943918#@>#"
+
+{% for TEST in TESTCASES %}
+{{ TEST.testcode }}
+{% if not loop.last %}
+print(SEPARATOR)
+{% endif %}
+{% endfor %}]]></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer><![CDATA[guess=int(input("Guess my number: "))
+if guess < secret:
+    print("Too low.")
+if guess > secret:
+    print("Too high.")
+if guess == secret:
+    print("You got it!")]]></answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>1</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="2" useasexample="1" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text>guessnumber(secret=47)</text>
+      </testcode>
+      <stdin>
+                <text>99</text>
+      </stdin>
+      <expected>
+                <text>Guess my number: 99
+Too high.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>guessnumber(secret=47)</text>
+      </testcode>
+      <stdin>
+                <text>28</text>
+      </stdin>
+      <expected>
+                <text>Guess my number: 28
+Too low.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>guessnumber(secret=47)</text>
+      </testcode>
+      <stdin>
+                <text>47</text>
+      </stdin>
+      <expected>
+                <text>Guess my number: 47
+You got it!</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>guessnumber(secret=0)</text>
+      </testcode>
+      <stdin>
+                <text>-3</text>
+      </stdin>
+      <expected>
+                <text>Guess my number: -3
+Too low.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>guessnumber(secret=1000000000000)</text>
+      </testcode>
+      <stdin>
+                <text>1000000000001</text>
+      </stdin>
+      <expected>
+                <text>Guess my number: 1000000000001
+Too high.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+<!-- question: 31852  -->
+  <question type="coderunner">
+    <name>
+      <text>輸入的字串是否包含空格？</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">請寫一段程式，出現提示字串 "Tell me anything: " 取得一字串後請自行指派一變數名稱儲存，</div>
+<div class="O1"></div>
+<div class="O1">接著判斷該字串是否包含空白，如果含有空格，就顯示"This string has spaces."</div>
+<div class="O1"></div>
+<div class="O1"></div>
+<div class="O1"></div>
+<div class="O1">如： 輸入 Hello world!，就顯示結果為 "This string has spaces."</div>
+</div>
+<p></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>25.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template>__saved_input__ = input
+def input(prompt=''):
+    s = __saved_input__(prompt)
+    print(s)
+    return s
+    
+{{STUDENT_ANSWER}}
+
+
+{{TEST.testcode}}</template>
+    <iscombinatortemplate>0</iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer><![CDATA[words = input("Tell me anything: ")
+if " " in words:
+    print("This string has spaces.")]]></answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>0</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="0" useasexample="1" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>Hello world!</text>
+      </stdin>
+      <expected>
+                <text>Tell me anything: Hello world!
+This string has spaces.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>Everything</text>
+      </stdin>
+      <expected>
+                <text>Tell me anything: Everything</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>Python rules!</text>
+      </stdin>
+      <expected>
+                <text>Tell me anything: Python rules!
+This string has spaces.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>blahblahblah1234567890blahblahblah</text>
+      </stdin>
+      <expected>
+                <text>Tell me anything: blahblahblah1234567890blahblahblah</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>Thinking like a programmer.</text>
+      </stdin>
+      <expected>
+                <text>Tell me anything: Thinking like a programmer.
+This string has spaces.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+</quiz>

@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+        <text>$course$/1081_405899001_基礎程式設計的預設/進階串列與字典</text>
+
+    </category>
+  </question>
+
+<!-- question: 32629  -->
+  <question type="coderunner">
+    <name>
+      <text>反轉字典的鍵與值</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">請撰寫一個名為 <strong>invert</strong> 的函式，只有1個參數 <em>d</em>，型別為字典。</div>
+<div class="O1"></div>
+<div class="O1">此函式會將 d 的內容轉換到一個新字典並作為傳回值。</div>
+<div class="O1">轉換方式為：新字典的鍵為 d 的值，而新字典的值為一個串列，串列的內容為 d 的鍵。</div>
+<div class="O1">在轉換過程中，若發現要加入新字典的鍵已存在，請把對應的值加到串列的尾端，</div>
+<div class="O1">結果如範例所示。</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="O1"></div>
+</div>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>25.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer>def invert(d):
+    d_inv = {}
+    for k in d:
+        v = d[k]
+        if v in d_inv:
+            d_inv[v].append(k)
+        else:
+            d_inv[v] = [k]
+    return d_inv</answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>0</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="0" useasexample="1" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text>print(invert({1:2, 3:4, 5:6}) == {2: [1], 4: [3], 6: [5]})</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>True</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(invert({1:1, 3:1, 5:1}) == {1: [1, 3, 5]})</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>True</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(invert({1:2, 2:1, 3:3}) == {2: [1], 1: [2], 3: [3]})</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>True</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(invert({1:1, 2:0, 3:1, 4:0}) == {1: [1, 3], 0: [2, 4]})</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>True</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(invert({}) == {})</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>True</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+<!-- question: 32626  -->
+  <question type="coderunner">
+    <name>
+      <text>建立城市串列函式</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">請撰寫一個函式，名為 <strong>city_list</strong>，有一個字串型別參數 <em>cities</em>，包含以逗點分隔的多個城市名稱，</div>
+<div class="O1"></div>
+<div class="O1">請將字串中的城市名稱<span style="text-decoration: underline;"><strong>存入串列</strong></span>後<span style="text-decoration: underline;"><strong>排序</strong></span>傳回，結果如範例所示。</div>
+</div>
+</div>
+</div>
+</div>
+<div class="O1"></div>
+</div>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>25.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer>def city_list(cities):
+    L = cities.split(',')
+    L.sort()
+    return L</answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>0</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="0" useasexample="1" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text>print(city_list('san francisco,boston,chicago,indianapolis'))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>['boston', 'chicago', 'indianapolis', 'san francisco']</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(city_list('Taipei,Kaohsiung,New Taipei,Taichung,Tainan,Taoyuan'))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>['Kaohsiung', 'New Taipei', 'Taichung', 'Tainan', 'Taipei', 'Taoyuan']</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(city_list('Kobe,Kyoto,Nagoya,Osaka,Yokohama'))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>['Kobe', 'Kyoto', 'Nagoya', 'Osaka', 'Yokohama']</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(city_list(''))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>['']</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(city_list(',,'))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>['', '', '']</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+<!-- question: 32628  -->
+  <question type="coderunner">
+    <name>
+      <text>替換字典中的值</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">請撰寫一個函式，名為 <strong>replace</strong>，它有3個參數：<em>d</em>、<em>v</em> 和 <em>e</em>。</div>
+<div class="O1">其中 d 的型別為字典，v 和 e 的型別為整數，函式無傳回值。</div>
+<div class="O1"></div>
+<div class="O1">此函式要把字典 d 裡為 v 的值都改為 e，如範例所示。</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="O1"></div>
+</div>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>25.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer>def replace(d:dict, v:int, e:int):
+    for k in d:
+        if d[k] == v:
+            d[k] = e</answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>0</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="0" useasexample="1" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text>d={1:2, 3:4, 4:2}
+replace(d, 2, 7)
+print(d)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>{1: 7, 3: 4, 4: 7}</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>d={1:2, 3:1, 4:2}
+replace(d, 1, 2)
+print(d)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>{1: 2, 3: 2, 4: 2}</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>d={1:2, 3:1, 4:2}
+replace(d, 0, 3)
+print(d)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>{1: 2, 3: 1, 4: 2}</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>d={1:5, 2:5, 3:5}
+replace(d, 5, 0)
+print(d)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>{1: 0, 2: 0, 3: 0}</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>d={}
+replace(d, 1, 2)
+print(d)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>{}</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+<!-- question: 32627  -->
+  <question type="coderunner">
+    <name>
+      <text>比對兩串列是否相等</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">請撰寫一名為 <strong>is_permutation</strong> 的函式，接收2個參數：<em>L1</em>和<em>L2</em>，型別都是串列，串列內元素都是相同資料型別。</div>
+<div class="O1"></div>
+<div class="O1">在不考慮元素順序的情況下，若L1和L2的元素內容是相同的，就傳回布林值 True，若不同則傳回布林值 False。如範例所示。</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="O1"></div>
+</div>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>25.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer>def is_permutation(L1,L2):
+    L1.sort()
+    L2.sort()
+    return L1 == L2</answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>0</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="0" useasexample="1" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text>print(is_permutation([1,2,3], [3,1,2]))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>True</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(is_permutation([1,2,3,1], [1,2,3]))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>False</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(is_permutation([1,1,1,2], [1,2,1,1]))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>True</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(is_permutation([1,2,3,4,5,6,7], [7,6,5,4,3,1,0]))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>False</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(is_permutation([], []))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>True</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+</quiz>

@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+        <text>$course$/1081_405899001_基礎程式設計的預設/字串</text>
+
+    </category>
+  </question>
+
+<!-- question: 31700  -->
+  <question type="coderunner">
+    <name>
+      <text>字串取代</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">請寫一段程式，將兩個已初始化變數 name1 及 name2 </div>
+<div class="O1"></div>
+<div class="O1">分別取代 "For Tommy and Gina who never backed down." 句子中的名字(Tommy 與 Gina)，</div>
+<div class="O1"></div>
+<div class="O1">並將更換後的句子重複3次並以print顯示出來。</div>
+<div class="O1"></div>
+<div class="O1"></div>
+</div>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>25.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template><![CDATA[import sys
+
+def __indent_line(line, extra_space):
+    """Add the given amount of extra space at the start (or remove, if negative)"""
+    if extra_space >= 0:
+        return extra_space * ' ' + line
+    elif len(line) - len(line.lstrip()) >= -extra_space:
+        return line[extra_space + 1 : ]
+    else:
+        raise Exception("Line '{}' has a negative indent!".format(line))
+        
+
+def __indent(code, num_spaces):
+    """Indent the given code by some fixed amount such that the first non-blank
+       line has 'num_spaces' spaces at the start.
+    """
+    lines = code.split('\n')
+    non_empty_lines = [line for line in lines if line != '']
+    if non_empty_lines:
+        first = non_empty_lines[0]
+        current_indent =  len(first) - len(first.lstrip())
+        reqd_indent = num_spaces - current_indent
+        indented_lines = [__indent_line(line, reqd_indent) for line in lines]
+        return '\n'.join(indented_lines) + '\n'
+    else:
+        return code  # Empty
+
+__skeleton__ = """
+def name_replace(name1, name2):
+{0}  # Student code inserted here
+"""
+
+__student_answer__ = """{{ STUDENT_ANSWER | e('py') }}"""
+
+try:
+    __indented__answer__ = __indent(__student_answer__, 4) #indent one level (4 spaces)
+except Exception as e:
+    print(e, file=sys.stderr)
+else:
+    exec(__skeleton__.format(__indented__answer__) + '\n' + """{{ TEST.testcode | e('py') }}""")
+
+SEPARATOR = "#<ab@17943918#@>#"
+
+{% for TEST in TESTCASES %}
+{{ TEST.testcode }}
+{% if not loop.last %}
+print(SEPARATOR)
+{% endif %}
+{% endfor %}]]></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer><![CDATA[print("For Tommy and Gina who never backed down.".replace("Tommy",name1).replace("Gina",name2)*3)]]></answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>1</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="2" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[name_replace(name1="George", name2="Mary")]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>For George and Mary who never backed down.For George and Mary who never backed down.For George and Mary who never backed down.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[name_replace(name1="Jose", name2="Megan")]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>For Jose and Megan who never backed down.For Jose and Megan who never backed down.For Jose and Megan who never backed down.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[name_replace(name1="Donald", name2="Melania")]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>For Donald and Melania who never backed down.For Donald and Melania who never backed down.For Donald and Melania who never backed down.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[name_replace(name1="Barack", name2="Michelle")]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>For Barack and Michelle who never backed down.For Barack and Michelle who never backed down.For Barack and Michelle who never backed down.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[name_replace(name1="William", name2="Hillary")]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>For William and Hillary who never backed down.For William and Hillary who never backed down.For William and Hillary who never backed down.</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+<!-- question: 31698  -->
+  <question type="coderunner">
+    <name>
+      <text>字串操作1</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">
+<div class="O1">請寫一段程式從已初始化字串 a_string 中自左算起第3個字元開始向右取3個字母並全部轉為大寫，</div>
+<div class="O1"></div>
+<div class="O1">如 a_string = "Guten Morgen" 得 "TEN" 並以print顯示出來。</div>
+</div>
+</div>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>25.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template><![CDATA[import sys
+
+def __indent_line(line, extra_space):
+    """Add the given amount of extra space at the start (or remove, if negative)"""
+    if extra_space >= 0:
+        return extra_space * ' ' + line
+    elif len(line) - len(line.lstrip()) >= -extra_space:
+        return line[extra_space + 1 : ]
+    else:
+        raise Exception("Line '{}' has a negative indent!".format(line))
+        
+
+def __indent(code, num_spaces):
+    """Indent the given code by some fixed amount such that the first non-blank
+       line has 'num_spaces' spaces at the start.
+    """
+    lines = code.split('\n')
+    non_empty_lines = [line for line in lines if line != '']
+    if non_empty_lines:
+        first = non_empty_lines[0]
+        current_indent =  len(first) - len(first.lstrip())
+        reqd_indent = num_spaces - current_indent
+        indented_lines = [__indent_line(line, reqd_indent) for line in lines]
+        return '\n'.join(indented_lines) + '\n'
+    else:
+        return code  # Empty
+
+__skeleton__ = """
+def string_test(a_string):
+{0}  # Student code inserted here
+"""
+
+__student_answer__ = """{{ STUDENT_ANSWER | e('py') }}"""
+
+try:
+    __indented__answer__ = __indent(__student_answer__, 4) #indent one level (4 spaces)
+except Exception as e:
+    print(e, file=sys.stderr)
+else:
+    exec(__skeleton__.format(__indented__answer__) + '\n' + """{{ TEST.testcode | e('py') }}""")
+
+SEPARATOR = "#<ab@17943918#@>#"
+
+{% for TEST in TESTCASES %}
+{{ TEST.testcode }}
+{% if not loop.last %}
+print(SEPARATOR)
+{% endif %}
+{% endfor %}]]></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer>print(a_string[2:5].upper())</answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>1</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="2" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[string_test(a_string="Guten Morgen")]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>TEN</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[string_test(a_string="Bonjour")]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>NJO</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[string_test(a_string="Goedemorgen")]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>EDE</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[string_test(a_string="Ohayou Gozaimasu")]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>AYO</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[string_test(a_string="Buongiorno")]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>ONG</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+<!-- question: 31699  -->
+  <question type="coderunner">
+    <name>
+      <text>字串操作2</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">
+<div class="O1">請寫一段程式從已初始化字串 a_string 中自右算起第6個字元開始向左取3個字母維持原來排列順序</div>
+<div class="O1">並只將最左字母轉為大寫其他字母則為小寫，</div>
+<div class="O1"></div>
+<div class="O1">如 a_string = "RaceTrack" 得 "Ace" 並以print顯示出來。</div>
+</div>
+</div>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>25.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template><![CDATA[import sys
+
+def __indent_line(line, extra_space):
+    """Add the given amount of extra space at the start (or remove, if negative)"""
+    if extra_space >= 0:
+        return extra_space * ' ' + line
+    elif len(line) - len(line.lstrip()) >= -extra_space:
+        return line[extra_space + 1 : ]
+    else:
+        raise Exception("Line '{}' has a negative indent!".format(line))
+        
+
+def __indent(code, num_spaces):
+    """Indent the given code by some fixed amount such that the first non-blank
+       line has 'num_spaces' spaces at the start.
+    """
+    lines = code.split('\n')
+    non_empty_lines = [line for line in lines if line != '']
+    if non_empty_lines:
+        first = non_empty_lines[0]
+        current_indent =  len(first) - len(first.lstrip())
+        reqd_indent = num_spaces - current_indent
+        indented_lines = [__indent_line(line, reqd_indent) for line in lines]
+        return '\n'.join(indented_lines) + '\n'
+    else:
+        return code  # Empty
+
+__skeleton__ = """
+def string_test(a_string):
+{0}  # Student code inserted here
+"""
+
+__student_answer__ = """{{ STUDENT_ANSWER | e('py') }}"""
+
+try:
+    __indented__answer__ = __indent(__student_answer__, 4) #indent one level (4 spaces)
+except Exception as e:
+    print(e, file=sys.stderr)
+else:
+    exec(__skeleton__.format(__indented__answer__) + '\n' + """{{ TEST.testcode | e('py') }}""")
+
+SEPARATOR = "#<ab@17943918#@>#"
+
+{% for TEST in TESTCASES %}
+{{ TEST.testcode }}
+{% if not loop.last %}
+print(SEPARATOR)
+{% endif %}
+{% endfor %}]]></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer>print(a_string[-8:-5].capitalize())</answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>1</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="2" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[string_test(a_string="RaceTrack")]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>Ace</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[string_test(a_string="Bobsleigh")
+]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>Obs</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[string_test(a_string="TrackAndField")]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>And</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[string_test(a_string="HorseRacing")
+]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>Ser</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[string_test(a_string="CycleSport")]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>Cle</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+<!-- question: 31701  -->
+  <question type="coderunner">
+    <name>
+      <text>字串進階操作</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">
+<div class="O1">有一已初始化字串 word_list，內含多個英文動詞，每個英文字詞以空格隔開，</div>
+<div class="O1">請寫一段程式從 word_list 取出第2個字詞與第3個字詞將其轉為小寫</div>
+<div class="O1">並在每個字詞後面加上 "ing" 字詞間以空格隔開組成新的字串後，將結果以print顯示出來。</div>
+<div class="O1"></div>
+<div class="O1">如當 word_list = "Eat Work Play Sleep repeat" 時，其執行結果為 "working playing"。</div>
+</div>
+</div>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>25.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template><![CDATA[import sys
+
+def __indent_line(line, extra_space):
+    """Add the given amount of extra space at the start (or remove, if negative)"""
+    if extra_space >= 0:
+        return extra_space * ' ' + line
+    elif len(line) - len(line.lstrip()) >= -extra_space:
+        return line[extra_space + 1 : ]
+    else:
+        raise Exception("Line '{}' has a negative indent!".format(line))
+        
+
+def __indent(code, num_spaces):
+    """Indent the given code by some fixed amount such that the first non-blank
+       line has 'num_spaces' spaces at the start.
+    """
+    lines = code.split('\n')
+    non_empty_lines = [line for line in lines if line != '']
+    if non_empty_lines:
+        first = non_empty_lines[0]
+        current_indent =  len(first) - len(first.lstrip())
+        reqd_indent = num_spaces - current_indent
+        indented_lines = [__indent_line(line, reqd_indent) for line in lines]
+        return '\n'.join(indented_lines) + '\n'
+    else:
+        return code  # Empty
+
+__skeleton__ = """
+def get_gerunds(word_list):
+{0}  # Student code inserted here
+"""
+
+__student_answer__ = """{{ STUDENT_ANSWER | e('py') }}"""
+
+try:
+    __indented__answer__ = __indent(__student_answer__, 4) #indent one level (4 spaces)
+except Exception as e:
+    print(e, file=sys.stderr)
+else:
+    exec(__skeleton__.format(__indented__answer__) + '\n' + """{{ TEST.testcode | e('py') }}""")
+
+SEPARATOR = "#<ab@17943918#@>#"
+
+{% for TEST in TESTCASES %}
+{{ TEST.testcode }}
+{% if not loop.last %}
+print(SEPARATOR)
+{% endif %}
+{% endfor %}]]></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer><![CDATA[first_space_pos=word_list.find(" ")
+second_space_pos=word_list.find(" ",first_space_pos+1)
+third_space_pos=word_list.find(" ",second_space_pos+1)
+print(word_list[first_space_pos+1:second_space_pos].lower()+"ing",word_list[second_space_pos+1:third_space_pos].lower()+"ing")]]></answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>1</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="2" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[get_gerunds(word_list="Eat Work Play Sleep repeat")]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>working playing</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[get_gerunds(word_list="Plan Do Check Act repeat")]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>doing checking</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[get_gerunds(word_list="Eat Drink Sleep repeat")]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>drinking sleeping</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[get_gerunds(word_list="Search Find Seek Discover repeat")]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>finding seeking</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text><![CDATA[get_gerunds(word_list="Run Walk Halt March repeat")]]></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>walking halting</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+</quiz>

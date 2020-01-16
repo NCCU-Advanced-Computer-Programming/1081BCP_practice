@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+        <text>$course$/1081_405899001_基礎程式設計的預設/函式</text>
+
+    </category>
+  </question>
+
+<!-- question: 32395  -->
+  <question type="coderunner">
+    <name>
+      <text>呼叫計算應付金額的函式</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">請撰寫一段程式，呼叫上一題的函式，<strong>該函式已寫好不必重寫</strong>，</div>
+<div class="O1">請直接呼叫 calculate_total，該函式所需兩個參數以 input 指令取得：</div>
+<div class="O1">第一個參數以提示字串 "My price is: " 取得資料需轉為浮點數型別，</div>
+<div class="O1">第二個參數以提示字串 "The percentage of my tip is: " 取得資料需轉為整數型別。</div>
+<div class="O1">最後顯示 "Total is:" 接著 calculate_total 所傳回的應付金額，如範例所示。</div>
+<div class="O1"></div>
+</div>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>30.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template><![CDATA[__saved_input__ = input
+def input(prompt=''):
+    s = __saved_input__(prompt)
+    print(s)
+    return s
+def calculate_total(price, percent):
+    return price+price*percent/100
+#my_price=float(input("My price is: "))
+#my_tip=int(input("The percentage of my tip is: "))
+#print("Total is:",calculate_total(my_price, my_tip))
+{{STUDENT_ANSWER}}]]></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer><![CDATA[my_price=float(input("My price is: "))
+my_tip=int(input("The percentage of my tip is: "))
+print("Total is:",calculate_total(my_price, my_tip))]]></answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>0</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="0" useasexample="1" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>20
+15</text>
+      </stdin>
+      <expected>
+                <text>My price is: 20
+The percentage of my tip is: 15
+Total is: 23.0</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>100
+5</text>
+      </stdin>
+      <expected>
+                <text>My price is: 100
+The percentage of my tip is: 5
+Total is: 105.0</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>78.5
+20</text>
+      </stdin>
+      <expected>
+                <text>My price is: 78.5
+The percentage of my tip is: 20
+Total is: 94.2</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>9999990
+10</text>
+      </stdin>
+      <expected>
+                <text>My price is: 9999990
+The percentage of my tip is: 10
+Total is: 10999989.0</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>20
+100</text>
+      </stdin>
+      <expected>
+                <text>My price is: 20
+The percentage of my tip is: 100
+Total is: 40.0</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+<!-- question: 32393  -->
+  <question type="coderunner">
+    <name>
+      <text>建立計算應付金額的函式</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">請撰寫一個函式，其名稱為 calculate_total，該函式有兩個參數：</div>
+<div class="O1">第一個參數名稱為 price ，代表價錢型別為浮點數，</div>
+<div class="O1">第二個參數名稱為 percent ，代表小費百分比型別為整數。</div>
+<div class="O1">這個函式會計算包含小費的應付金額並<strong>傳回</strong>，其公式為</div>
+<div class="O1">total = price + price * percent / 100 </div>
+<div class="O1"></div>
+</div>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>30.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer>def calculate_total(price, percent):
+    return price+price*percent/100</answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>0</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="0" useasexample="1" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text>print(calculate_total(price=20,percent=15))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>23.0</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(calculate_total(100,5))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>105.0</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(calculate_total(price=78.5,percent=20))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>94.2</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(calculate_total(9999990,percent=10))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>10999989.0</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(calculate_total(20,100))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>40.0</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+<!-- question: 32392  -->
+  <question type="coderunner">
+    <name>
+      <text>建立計算身體質量指數(Body Mass Index, BMI)的函式</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">請撰寫一個函式，其名稱為 calculate_bmi，該函式有兩個參數：</div>
+<div class="O1">第一個參數名稱為 height ，型別為浮點數，</div>
+<div class="O1">第二個參數名稱為 weight ，型別也是浮點數。</div>
+<div class="O1">這個函式會計算BMI數值並傳回，其公式為</div>
+<div class="O1">bmi = weight / height ** 2 ，所得數值請以round方法四捨五入<strong>取最多小數點2位</strong>。</div>
+<div class="O1">這個函式還會再根據下表，以BMI數值落於哪個範圍來傳回對應的文字：</div>
+<div class="O1">
+<table border="1" style="width: 305px; height: 71px;">
+<tbody>
+<tr>
+<td>BMI數值範圍</td>
+<td>顯示文字</td>
+</tr>
+<tr>
+<td>BMI &lt; 18.5</td>
+<td>You are underweight.</td>
+</tr>
+<tr>
+<td>18.5 ≤ BMI &lt; 24</td>
+<td>You are normal.</td>
+</tr>
+<tr>
+<td>24 <span>≤ BMI &lt; 30</span></td>
+<td>You are overweight.</td>
+</tr>
+<tr>
+<td>BMI ≥ 30</td>
+<td>You are obese.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="O1"></div>
+<div class="O1"></div>
+<div class="O1"></div>
+</div>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>40.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer><![CDATA[def calculate_bmi(height,weight):
+    bmi=round(weight / height ** 2,2)
+    if bmi < 18.5:
+        return bmi,"You are underweight."
+    elif 18.5 <= bmi < 24:
+        return bmi,"You are normal."
+    elif 24 <= bmi < 30:
+        return bmi,"You are overweight."
+    else:
+        return bmi,"You are obese."
+    return bmi,"Out of range."]]></answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>0</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="0" useasexample="1" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text>print(calculate_bmi(height=1.7,weight=57.8))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>(20.0, 'You are normal.')</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(calculate_bmi(1.6,64))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>(25.0, 'You are overweight.')</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(calculate_bmi(height=1.65,weight=49))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>(18.0, 'You are underweight.')</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(calculate_bmi(1.8,weight=100))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>(30.86, 'You are obese.')</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(calculate_bmi(1.75,73.5))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>(24.0, 'You are overweight.')</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+</quiz>

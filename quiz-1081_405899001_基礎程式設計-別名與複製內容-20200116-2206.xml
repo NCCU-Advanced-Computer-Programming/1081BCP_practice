@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+        <text>$course$/1081_405899001_基礎程式設計的預設/別名與複製內容</text>
+
+    </category>
+  </question>
+
+<!-- question: 32986  -->
+  <question type="coderunner">
+    <name>
+      <text>反轉字典的鍵與(不重複)值</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">請撰寫一名為 <strong>invert_dict</strong> 的函式，此函式有一個參數 <em>input_dict</em>，其型別為字典，</div>
+<div class="O1">假設 input_dict 中的<strong>值都是不重複的不可變物件</strong>。</div>
+<div class="O1"></div>
+<div class="O1">在函式內會<strong>建立並傳回一個新的字典</strong> new_dict，</div>
+<div class="O1">new_dict 的鍵為 input_dict 的值，</div>
+<div class="O1">new_dict 的值為 input_dict 的鍵。</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="O1"></div>
+</div>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>25.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer>def invert_dict(input_dict):
+    new_dict = {}
+    for k in input_dict.keys():
+        new_dict[input_dict[k]] = k
+    return new_dict</answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>0</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="0" useasexample="1" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text>print(invert_dict({1: 'a', 2: 'b', 3: 'c'})=={'a': 1, 'b': 2, 'c': 3})</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>True</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(invert_dict({'a': 1, 'b': 2, 'c': 3})=={1: 'a', 2: 'b', 3: 'c'})</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>True</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(invert_dict({False: 0, True: 1})=={0: False, 1: True})</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>True</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(invert_dict({1: 'a', 'b': 2, 3.0: True})=={'a': 1, 2: 'b', True: 3.0})</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>True</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(invert_dict({}))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>{}</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+<!-- question: 32987  -->
+  <question type="coderunner">
+    <name>
+      <text>就地反轉字典的鍵與(不重複)值</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">請撰寫一名為 <strong>invert_dict_inplace</strong> 的函式，此函式有一個參數 <em>input_dict</em>，其型別為字典，</div>
+</div>
+<div class="O1">假設 input_dict 中的<strong>值都是不重複的不可變物件</strong>。</div>
+<div class="O1"></div>
+<div class="O1">此函式會<strong>將 input_dict 的鍵和值互換</strong>，</div>
+<div class="O1">意即 input_dict 的鍵會變成值，input_dict 的值會變成鍵，</div>
+<div class="O1">且<strong>此函式不會傳回任何物件</strong>。</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>25.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer>def invert_dict_inplace(input_dict):
+    dict_copy = input_dict.copy()
+    input_dict.clear()
+    for k in dict_copy.keys():
+        input_dict[dict_copy[k]] = k</answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>0</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="0" useasexample="1" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text>d = {1: 'a', 2: 'b', 3: 'c'}
+invert_dict_inplace(d)
+print(d == {'a': 1, 'b': 2, 'c': 3})</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>True</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>d = {'a': 1, 'b': 2, 'c': 3}
+invert_dict_inplace(d)
+print(d == {1: 'a', 2: 'b', 3: 'c'})</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>True</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>d = {False: 0, True: 1}
+invert_dict_inplace(d)
+print(d == {0: False, 1: True})</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>True</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>d = {1: 'a', 'b': 2, 3.0: True}
+invert_dict_inplace(d)
+print(d == {'a': 1, 2: 'b', True: 3.0})</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>True</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>d = {}
+invert_dict_inplace(d)
+print(d)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>{}</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+<!-- question: 32990  -->
+  <question type="coderunner">
+    <name>
+      <text>就地移除串列中重複元素</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">請撰寫一名為 <strong>removeDuplicates</strong> 的函式，此函式有一個參數 <em>nums</em>，</div>
+<div class="O1">其型別為串列，串列內容皆為整數值且經過排序，但其中可能有重複數值。</div>
+<div class="O1"></div>
+<div class="O1">請將<strong>重複數值元素就地移除並傳回最後串列長度</strong>。結果如範例所示。</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>25.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer>#Version 1
+def removeDuplicates(nums):
+    copy = nums.copy()
+    nums.clear()
+    for i in copy:
+        if i not in nums:
+            nums.append(i)
+    return len(nums)
+
+# Version 2 faster than version 1
+# def removeDuplicates(nums):
+#     j = 0
+#     for i in range(len(nums)):
+#         if j == 0:
+#             j += 1
+#         elif nums[i] != nums[j-1]:
+#             nums[j]=nums[i]
+#             j += 1
+#     return j</answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>0</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="0" useasexample="1" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text>nums = [0,0,1,1,1,2,2,3,3,4]
+print(nums[:removeDuplicates(nums)])</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>[0, 1, 2, 3, 4]</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>nums = [0,1,2,3,4]
+print(nums[:removeDuplicates(nums)])</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>[0, 1, 2, 3, 4]</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>nums = [0,0,0,0,0]
+print(nums[:removeDuplicates(nums)])</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>[0]</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>nums = []
+print(nums[:removeDuplicates(nums)])</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>[]</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>nums = [0,0,1,1,2,2,3,3,4,4]
+print(nums[:removeDuplicates(nums)])</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>[0, 1, 2, 3, 4]</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+<!-- question: 32991  -->
+  <question type="coderunner">
+    <name>
+      <text>計算兩個串列的相似度</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">
+<div class="O1">請撰寫一名為 <strong>list_similarity</strong> 的函式，此函式有兩個參數 <em>L1</em> 和 <em>L2</em>，其型別皆為串列。</div>
+<div class="O1"></div>
+<div class="O1">函式要能計算兩個串列的相似度並四捨五入取小數點2位傳回。</div>
+<div class="O1"></div>
+<div class="O1">相似度計算方式：L1與L2相同元素個數／L1與L2元素總數，</div>
+<div class="O1">或是透過差異度計算，差異度＝L1與L2元素總差異／L1與L2元素總數，相似度＝1-差異度。</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>25.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer>def frequencies(words):
+    freq_dict = {}
+    for word in words:
+        if word in freq_dict:
+            freq_dict[word] += 1
+        else:
+            freq_dict[word] = 1
+    return freq_dict
+
+#Version 1
+def calculate_similarity(dict1, dict2):
+    same = 0
+    total = 0
+    for word in dict1.keys():
+        if word in dict2.keys():
+            same += min(dict1[word], dict2[word])*2
+    total = sum(dict1.values()) + sum(dict2.values())
+    similar = same/total
+    return round(similar, 2)
+
+#Version 2
+#def calculate_similarity(dict1, dict2):
+#    diff = 0
+#    total = 0
+#    for word in dict1.keys():
+#        if word in dict2.keys():
+#            diff += abs(dict1[word] - dict2[word])
+#        else:
+#            diff += dict1[word]
+#    for word in dict2.keys():
+#        if word not in dict1.keys():
+#            diff += dict2[word]
+#    total = sum(dict1.values()) + sum(dict2.values())
+#    difference = diff / total
+#    similar = 1 - difference
+#    return round(similar, 2)
+
+def list_similarity(L1,L2):
+    D1 = frequencies(L1)
+    D2 = frequencies(L2)
+    return calculate_similarity(D1,D2)</answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>0</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="0" useasexample="1" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text>print(list_similarity(['apple','apple','bread','bread'],['apple','apple','apple','apple','apple','sugar','sugar','sugar','sugar','sugar']))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>0.29</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(list_similarity([0,1,2,3,4],[5,6,7,8,9]))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>0.0</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(list_similarity([0,0,0,0,0],[0,0,0,0,0]))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>1.0</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(list_similarity([True,True,True,False,False],[False,False,False,True,True]))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>0.8</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>print(list_similarity(['Shall', 'I', 'compare', 'thee', 'to', 'a', 'summers', 'day', 'Thou', 'art', 'more', 'lovely', 'and', 'more', 'temperate', 'Rough', 'winds', 'do', 'shake', 'the', 'darling', 'buds', 'of', 'May', 'And', 'summers', 'lease', 'hath', 'all', 'too', 'short', 'a', 'date', 'Sometime', 'too', 'hot', 'the', 'eye', 'of', 'heaven', 'shines', 'And', 'often', 'is', 'his', 'gold', 'complexion', 'dimmed', 'And', 'every', 'fair', 'from', 'fair', 'sometime', 'declines', 'By', 'chance', 'or', 'natures', 'changing', 'course', 'untrimmed', 'But', 'thy', 'eternal', 'summer', 'shall', 'not', 'fade', 'Nor', 'lose', 'possession', 'of', 'that', 'fair', 'thou', 'owst', 'Nor', 'shall', 'death', 'brag', 'thou', 'wanderst', 'in', 'his', 'shade', 'When', 'in', 'eternal', 'lines', 'to', 'time', 'thou', 'growst', 'So', 'long', 'as', 'men', 'can', 'breathe', 'or', 'eyes', 'can', 'see', 'So', 'long', 'lives', 'this', 'and', 'this', 'gives', 'life', 'to', 'thee'],['Devouring', 'Time', 'blunt', 'thou', 'the', 'lions', 'paws', 'And', 'make', 'the', 'earth', 'devour', 'her', 'own', 'sweet', 'brood', 'Pluck', 'the', 'keen', 'teeth', 'from', 'the', 'fierce', 'tigers', 'jaws', 'And', 'burn', 'the', 'longlived', 'phoenix', 'in', 'her', 'blood', 'Make', 'glad', 'and', 'sorry', 'seasons', 'as', 'thou', 'fleetst', 'And', 'do', 'whateer', 'thou', 'wilt', 'swiftfooted', 'Time', 'To', 'the', 'wide', 'world', 'and', 'all', 'her', 'fading', 'sweets', 'But', 'I', 'forbid', 'thee', 'one', 'most', 'heinous', 'crime', 'O', 'carve', 'not', 'with', 'thy', 'hours', 'my', 'loves', 'fair', 'brow', 'Nor', 'draw', 'no', 'lines', 'there', 'with', 'thine', 'antique', 'pen', 'Him', 'in', 'thy', 'course', 'untainted', 'do', 'allow', 'For', 'beautys', 'pattern', 'to', 'succeeding', 'men', 'Yet', 'do', 'thy', 'worst', 'old', 'Time', 'despite', 'thy', 'wrong', 'My', 'love', 'shall', 'in', 'my', 'verse', 'ever', 'live', 'young']))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>0.24</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+</quiz>

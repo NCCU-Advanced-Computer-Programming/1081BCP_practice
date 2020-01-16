@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+        <text>$course$/1081_405899001_基礎程式設計的預設/迴圈</text>
+
+    </category>
+  </question>
+
+<!-- question: 32139  -->
+  <question type="coderunner">
+    <name>
+      <text>修正無窮迴圈</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">
+<div class="O1">修正下列會產生無窮迴圈的程式，請猜測該程式碼想要達成的目標是什麼？並修改該程式為可正確執行的程式</div>
+<div class="O1"></div>
+<div class="O1">
+<p><img src="@@PLUGINFILE@@/ch16_1.png" width="501" height="157" /></p>
+</div>
+<div class="O1"></div>
+<div class="O1"></div>
+</div>
+</div>]]></text>
+<file name="ch16_1.png" path="/" encoding="base64">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</file>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>40.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template>__saved_input__ = input
+def input(prompt=''):
+    s = __saved_input__(prompt)
+    print(s)
+    return s
+    
+{{STUDENT_ANSWER}}
+
+
+{{TEST.testcode}}</template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer><![CDATA[num=8
+guess=int(input("Guess my number: "))
+while guess != num:
+    guess = int(input("Guess again: "))
+print("Right!")]]></answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>1</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="2" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>8</text>
+      </stdin>
+      <expected>
+                <text>Guess my number: 8
+Right!</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>5
+8</text>
+      </stdin>
+      <expected>
+                <text>Guess my number: 5
+Guess again: 8
+Right!</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>5
+6
+8</text>
+      </stdin>
+      <expected>
+                <text>Guess my number: 5
+Guess again: 6
+Guess again: 8
+Right!</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>5
+6
+7
+8</text>
+      </stdin>
+      <expected>
+                <text>Guess my number: 5
+Guess again: 6
+Guess again: 7
+Guess again: 8
+Right!</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>5
+12345678901234567890
+6
+7
+8</text>
+      </stdin>
+      <expected>
+                <text>Guess my number: 5
+Guess again: 12345678901234567890
+Guess again: 6
+Guess again: 7
+Guess again: 8
+Right!</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+<!-- question: 32140  -->
+  <question type="coderunner">
+    <name>
+      <text>列出6的倍數</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>請寫一段程式，將1到100之間，所有6的倍數顯示出來，</p>
+<p>並在最後以print顯示 "The total count:" 以及總共有幾個數字。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>30.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer><![CDATA[count = 0
+for i in range(1,100):
+    if i % 6 == 0:
+        count+=1
+        print(i)
+print("The total count:", count)]]></answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>1</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="0" useasexample="1" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>6
+12
+18
+24
+30
+36
+42
+48
+54
+60
+66
+72
+78
+84
+90
+96
+The total count: 16</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+<!-- question: 32141  -->
+  <question type="coderunner">
+    <name>
+      <text>文字排列的三角形</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">
+<div class="O1">
+<div class="O1">請寫一段程式，提示字元"Input the height of triangle(&gt;=2): "，取得三角形的高度後，依據該高度產生文字排列的三角形，如範例所示。</div>
+<div class="O1"></div>
+<div class="O1"></div>
+<div class="O1"></div>
+<div class="O1"></div>
+</div>
+</div>]]></text>
+<file name="ch16_1.png" path="/" encoding="base64">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</file>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>40.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>8</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template>__saved_input__ = input
+def input(prompt=''):
+    s = __saved_input__(prompt)
+    print(s)
+    return s
+    
+{{STUDENT_ANSWER}}
+
+
+{{TEST.testcode}}</template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer><![CDATA[h=int(input("Input the height of triangle(>=2): "))
+for i in range(1,h+1):
+    print(" "*(h-i)+"*"*(2*i-1))]]></answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>1</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="2" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>5</text>
+      </stdin>
+      <expected>
+                <text><![CDATA[Input the height of triangle(>=2): 5
+    *
+   ***
+  *****
+ *******
+*********]]></text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>2</text>
+      </stdin>
+      <expected>
+                <text><![CDATA[Input the height of triangle(>=2): 2
+ *
+***]]></text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>3</text>
+      </stdin>
+      <expected>
+                <text><![CDATA[Input the height of triangle(>=2): 3
+  *
+ ***
+*****]]></text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>4</text>
+      </stdin>
+      <expected>
+                <text><![CDATA[Input the height of triangle(>=2): 4
+   *
+  ***
+ *****
+*******]]></text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text>6</text>
+      </stdin>
+      <expected>
+                <text><![CDATA[Input the height of triangle(>=2): 6
+     *
+    ***
+   *****
+  *******
+ *********
+***********]]></text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+</quiz>
