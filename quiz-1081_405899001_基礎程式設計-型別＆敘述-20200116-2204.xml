@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+        <text>$course$/1081_405899001_基礎程式設計的預設/型別＆敘述</text>
+
+    </category>
+  </question>
+
+<!-- question: 31642  -->
+  <question type="coderunner">
+    <name>
+      <text>CAPSTONE整合專案：從分鐘數轉換成幾小時幾分</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>請撰寫程式片段，可將分鐘數轉換成幾小時幾分，詳細功能需求如下：</p>
+<p>1. 初始化紀錄欲轉換的分鐘數變數名稱為 minutes_to_convert ，值為 123</p>
+<p>2. 取得轉換後的小時數，指派給名稱 hours_part</p>
+<p>3. 取得轉換後的分鐘數，指派給名稱 minutes_part</p>
+<p>4. 顯示結果，如下(第一行空行請忽略)</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>100.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>1</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>0</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>18</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template><![CDATA[import sys
+
+def __indent_line(line, extra_space):
+    """Add the given amount of extra space at the start (or remove, if negative)"""
+    if extra_space >= 0:
+        return extra_space * ' ' + line
+    elif len(line) - len(line.lstrip()) >= -extra_space:
+        return line[extra_space + 1 : ]
+    else:
+        raise Exception("Line '{}' has a negative indent!".format(line))
+        
+
+def __indent(code, num_spaces):
+    """Indent the given code by some fixed amount such that the first non-blank
+       line has 'num_spaces' spaces at the start.
+    """
+    lines = code.split('\n')
+    non_empty_lines = [line for line in lines if line != '']
+    if non_empty_lines:
+        first = non_empty_lines[0]
+        current_indent =  len(first) - len(first.lstrip())
+        reqd_indent = num_spaces - current_indent
+        indented_lines = [__indent_line(line, reqd_indent) for line in lines]
+        return '\n'.join(indented_lines) + '\n'
+    else:
+        return code  # Empty
+
+__skeleton__ = """
+
+{0}  # Student code inserted here
+
+"""
+
+__student_answer__ = """{{ STUDENT_ANSWER | e('py') }}"""
+
+try:
+    __indented__answer__ = __indent(__student_answer__, 0) #indent 0 level (0 spaces)
+except Exception as e:
+    print(e, file=sys.stderr)
+else:
+    exec(__skeleton__.format(__indented__answer__) + '\n' + """{{ TEST.testcode | e('py') }}""")
+
+SEPARATOR = "#<ab@17943918#@>#"
+
+{% for TEST in TESTCASES %}
+{{ TEST.testcode }}
+{% if not loop.last %}
+print(SEPARATOR)
+{% endif %}
+{% endfor %}]]></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer><![CDATA[minutes_to_convert = 123
+hours_part = int(minutes_to_convert/60)
+minutes_part = minutes_to_convert%60
+print("Hours")
+print(hours_part)
+print("Minutes")
+print(minutes_part)]]></answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>1</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="0" useasexample="1" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text></text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>Hours
+2
+Minutes
+3</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+<!-- question: 31687  -->
+  <question type="coderunner">
+    <name>
+      <text>型別轉換</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">請依說明將下列數值內容進行型別轉換：</div>
+<div class="O2">1. 請將True轉換為字串(str)，並將轉換後內容指派給a</div>
+<div class="O2">2. 請將"4"轉換為整數(int)<span>，並將轉換後內容指派給b</span></div>
+<div class="O2">3. 請將3.8轉換為字串(str)<span>，並將轉換後內容指派給c</span></div>
+<div class="O2">4. 請將3轉換為浮點數(float)<span>，並將轉換後內容指派給d</span></div>
+<div class="O2">5. 請將0.5轉換為整數(int)<span>，並將轉換後內容指派給e</span></div>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>30.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>3</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>18</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template><![CDATA[{{ STUDENT_ANSWER }}
+
+__student_answer__ = """{{ STUDENT_ANSWER | e('py') }}"""
+
+SEPARATOR = "#<ab@17943918#@>#"
+
+{% for TEST in TESTCASES %}
+{{ TEST.testcode }}
+{% if not loop.last %}
+print(SEPARATOR)
+{% endif %}
+{% endfor %}]]></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer><![CDATA[a=str(True)
+b=int("4")
+c=str(3.8)
+d=float(3)
+e=int(0.5)]]></answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>1</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="2" useasexample="0" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text>print(a, type(a))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text><![CDATA[True <class 'str'>]]></text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text>print(b, type(b))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text><![CDATA[4 <class 'int'>]]></text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text>print(c, type(c))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text><![CDATA[3.8 <class 'str'>]]></text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text>print(d, type(d))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text><![CDATA[3.0 <class 'float'>]]></text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="0" mark="1.0000000" >
+      <testcode>
+                <text>print(e, type(e))</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text><![CDATA[0 <class 'int'>]]></text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+<!-- question: 31689  -->
+  <question type="coderunner">
+    <name>
+      <text>從英哩數值轉換成公制</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<div class="O1">寫一段程式將名為 miles 的英哩數值(已初始化)，使用公式：<br />   km = miles / 0.62137</div>
+<p>  meters = 1000 * km</p>
+<p>將英哩轉為公里(km)及公尺(meters)，並依如下範例Result欄內格式(第一行空行請忽略)顯示結果。</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>35.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>2</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>18</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template><![CDATA[import sys
+
+def __indent_line(line, extra_space):
+    """Add the given amount of extra space at the start (or remove, if negative)"""
+    if extra_space >= 0:
+        return extra_space * ' ' + line
+    elif len(line) - len(line.lstrip()) >= -extra_space:
+        return line[extra_space + 1 : ]
+    else:
+        raise Exception("Line '{}' has a negative indent!".format(line))
+        
+
+def __indent(code, num_spaces):
+    """Indent the given code by some fixed amount such that the first non-blank
+       line has 'num_spaces' spaces at the start.
+    """
+    lines = code.split('\n')
+    non_empty_lines = [line for line in lines if line != '']
+    if non_empty_lines:
+        first = non_empty_lines[0]
+        current_indent =  len(first) - len(first.lstrip())
+        reqd_indent = num_spaces - current_indent
+        indented_lines = [__indent_line(line, reqd_indent) for line in lines]
+        return '\n'.join(indented_lines) + '\n'
+    else:
+        return code  # Empty
+
+__skeleton__ = """
+def convert_to_metric(miles):
+{0}  # Student code inserted here
+"""
+
+__student_answer__ = """{{ STUDENT_ANSWER | e('py') }}"""
+
+try:
+    __indented__answer__ = __indent(__student_answer__, 4) #indent one level (4 spaces)
+except Exception as e:
+    print(e, file=sys.stderr)
+else:
+    exec(__skeleton__.format(__indented__answer__) + '\n' + """{{ TEST.testcode | e('py') }}""")
+
+SEPARATOR = "#<ab@17943918#@>#"
+
+{% for TEST in TESTCASES %}
+{{ TEST.testcode }}
+{% if not loop.last %}
+print(SEPARATOR)
+{% endif %}
+{% endfor %}]]></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer><![CDATA[km=miles/0.62137
+meters=1000*km
+print("miles")
+print(miles)
+print("km")
+print(km)
+print("meters")
+print(meters)]]></answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>1</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="2" useasexample="1" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>convert_to_metric(miles=5)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>miles
+5
+km
+8.046735439432222
+meters
+8046.735439432222</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>convert_to_metric(miles=0)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>miles
+0
+km
+0.0
+meters
+0.0</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>convert_to_metric(miles=6450)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>miles
+6450
+km
+10380.288716867568
+meters
+10380288.716867568</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>convert_to_metric(miles=244.82)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>miles
+244.82
+km
+394.00035405635936
+meters
+394000.3540563594</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>convert_to_metric(miles=2.456)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>miles
+2.456
+km
+3.9525564478491075
+meters
+3952.5564478491074</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+<!-- question: 31688  -->
+  <question type="coderunner">
+    <name>
+      <text>從華氏溫度轉換成攝氏溫度</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>寫一段程式將名為 f 的華氏溫度數值(已初始化)，使用公式 </p>
+<div class="O1">  c = (f - 32) / 1.8 <br /> 轉換成攝氏溫度指派為 c ，並顯示計算結果(數值即可) 。</div>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>35.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <coderunnertype>python3</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>0</allornothing>
+    <penaltyregime>0</penaltyregime>
+    <precheck>3</precheck>
+    <showsource>0</showsource>
+    <answerboxlines>18</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload></answerpreload>
+    <useace></useace>
+    <resultcolumns></resultcolumns>
+    <template><![CDATA[import sys
+
+def __indent_line(line, extra_space):
+    """Add the given amount of extra space at the start (or remove, if negative)"""
+    if extra_space >= 0:
+        return extra_space * ' ' + line
+    elif len(line) - len(line.lstrip()) >= -extra_space:
+        return line[extra_space + 1 : ]
+    else:
+        raise Exception("Line '{}' has a negative indent!".format(line))
+        
+
+def __indent(code, num_spaces):
+    """Indent the given code by some fixed amount such that the first non-blank
+       line has 'num_spaces' spaces at the start.
+    """
+    lines = code.split('\n')
+    non_empty_lines = [line for line in lines if line != '']
+    if non_empty_lines:
+        first = non_empty_lines[0]
+        current_indent =  len(first) - len(first.lstrip())
+        reqd_indent = num_spaces - current_indent
+        indented_lines = [__indent_line(line, reqd_indent) for line in lines]
+        return '\n'.join(indented_lines) + '\n'
+    else:
+        return code  # Empty
+
+__skeleton__ = """
+def convert_to_celsius(f):
+{0}  # Student code inserted here
+"""
+
+__student_answer__ = """{{ STUDENT_ANSWER | e('py') }}"""
+
+try:
+    __indented__answer__ = __indent(__student_answer__, 4) #indent one level (4 spaces)
+except Exception as e:
+    print(e, file=sys.stderr)
+else:
+    exec(__skeleton__.format(__indented__answer__) + '\n' + """{{ TEST.testcode | e('py') }}""")
+
+SEPARATOR = "#<ab@17943918#@>#"
+
+{% for TEST in TESTCASES %}
+{{ TEST.testcode }}
+{% if not loop.last %}
+print(SEPARATOR)
+{% endif %}
+{% endfor %}]]></template>
+    <iscombinatortemplate></iscombinatortemplate>
+    <allowmultiplestdins></allowmultiplestdins>
+    <answer>c=(f-32)/1.8
+print(c)</answer>
+    <validateonsave>1</validateonsave>
+    <testsplitterre></testsplitterre>
+    <language></language>
+    <acelang></acelang>
+    <sandbox></sandbox>
+    <grader></grader>
+    <cputimelimitsecs></cputimelimitsecs>
+    <memlimitmb></memlimitmb>
+    <sandboxparams></sandboxparams>
+    <templateparams></templateparams>
+    <hoisttemplateparams>1</hoisttemplateparams>
+    <twigall>0</twigall>
+    <uiplugin></uiplugin>
+    <testcases>
+      <testcase testtype="2" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>convert_to_celsius(f=212)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>100.0</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>SHOW</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>convert_to_celsius(f=32)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>0.0</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>convert_to_celsius(f=-459.67)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>-273.15</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>convert_to_celsius(f=98.6)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>36.99999999999999</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="1" mark="1.0000000" >
+      <testcode>
+                <text>convert_to_celsius(f=600)</text>
+      </testcode>
+      <stdin>
+                <text></text>
+      </stdin>
+      <expected>
+                <text>315.55555555555554</text>
+      </expected>
+      <extra>
+                <text></text>
+      </extra>
+      <display>
+                <text>HIDE</text>
+      </display>
+    </testcase>
+    </testcases>
+  </question>
+
+</quiz>
